@@ -1,5 +1,10 @@
 
 public class Node {
-	int content;
-	Node next;
+	public int content;
+	public Node next;
+	
+	public Node(int value) {
+		this.content = value;
+		this.next = null;
+	}
 }

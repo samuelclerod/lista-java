@@ -1,10 +1,23 @@
 
 public class LinkedList implements List{
-	Node head;
+	
+	private Node head;
 
 	@Override
 	public void add(int value) {
-		// TODO Auto-generated method stub
+		
+		Node newNode = new Node(value);
+		
+		if(head==null) {
+			head = newNode;
+		} else {
+			Node current = head;
+			while(current.next==null) {
+				current = current.next;
+			}
+			
+			current.next = newNode;
+		}
 		
 	}
 
