@@ -47,7 +47,8 @@ public class LinkedList implements List {
 		if(this.head==null) {
 			return;
 		}
-		if (position < 1 || position > this.size()) {
+		int maxPosition = this.size(); 
+		if (position < 1 || position > maxPosition) {
 			return;
 		}
 
