@@ -23,8 +23,23 @@ public class LinkedList implements List {
 
 	@Override
 	public void remove(int value) {
-		// TODO Auto-generated method stub
-
+		if( this.head==null) { 
+			return ;
+		}
+		Node current=this.head, previous=null;
+		while(current != null && current.content!= value) {
+			previous = current;
+			current = current.next;
+		}
+		if(current==null) {
+			return;
+		}
+		if(previous==null) {
+			this.head = current.next;
+		}else {			
+			previous.next = current.next;
+		}
+		current.next = null;
 	}
 
 	@Override
@@ -36,7 +51,7 @@ public class LinkedList implements List {
 		String out = "";
 		Node current = this.head;
 		while (current != null) {
-			out += current.content + ' ';
+			out += current.content + " ";
 			current = current.next;
 		}
 		return out;
